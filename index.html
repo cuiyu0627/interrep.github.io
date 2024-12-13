@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>InterRep: A Visual Interaction Representation for Robotic Grasping</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,32 +88,29 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">InterRep: A Visual Interaction Representation for Robotic Grasping</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://keunhong.com">Yu Cui</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="https://utkarshsinha.com">Qi Ye</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="https://jonbarron.info">Qingtao Liu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="http://sofienbouaziz.com">Anjun Chen</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              <a href="https://www.danbgoldman.com">Gaofeng Li</a><sup1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+              <a href="https://homes.cs.washington.edu/~seitz/">Jiming Chen</a><sup>1</sup>,
             </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+        
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Zhejiang University</span>
           </div>
 
           <div class="column has-text-centered">
@@ -258,31 +255,38 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Recently, pre-trained vision models have gained
+            significant attention in motor control, showcasing impressive
+            performance across diverse robotic learning tasks. While previous
+            works predominantly concentrate on the significance of
+            the pre-training phase, the equally important task of extracting
+            more effective representations based on existing pre-trained
+            visual models remains unexplored.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            To better leverage the
+            representation capabilities of pre-trained models for robotic
+            grasping, we propose InterRep, a novel interaction representation
+            method that possesses not only the strengths of pre-trained
+            models, known for their robustness in noisy environments
+            and their proficiency in recognizing essential features, but
+            also the capacity of capturing dynamic interaction details and
+            local geometric features during the grasping process. Based on
+            the novel representation, we introduce a deep reinforcement
+            learning method to learn generalizable grasping policies. 
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            The
+            experimental results demonstrate that our proposed representation
+            outperforms the baselines in terms of both training speed
+            and generalization. For the generalized grasping tasks with
+            dexterous robotic hands, our method boasts a success rate
+            nearly 20% higher than methods using the global features of the
+            entire image from pre-trained models. In addition, our proposed
+            representation method demonstrates promising performance
+            when applied to a different robotic hand and task. It also
+            exhibits excellent performance on real robots with a success
+            rate of 70%.
           </p>
         </div>
       </div>
